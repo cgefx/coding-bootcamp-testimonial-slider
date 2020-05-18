@@ -21,6 +21,10 @@ html {
 	@include respond(bp1100) {
 		font-size: 55%;
 	}
+
+	@include respond(bp600) {
+		font-size: 40%;
+	}
 }
 
 body {

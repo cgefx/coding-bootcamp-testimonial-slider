@@ -10,45 +10,50 @@
 
 	<body>
 		<div class="wrapper">
-			<div class="background-curve"><img src="./images/pattern-curve.svg" alt="" /></div>
+			<div class="wrapper__background-curve">
+				<img src="./images/pattern-curve.svg" alt="" />
+			</div>
 			<div class="slider">
-				<div class="slider__text-container">
-					<img class="slider__text-background" src="./images/pattern-quotes.svg" alt="" />
-					<div class="slide-text">
-						<div class="slide-text__info">
-							<p>
-								"I’ve been interested in coding for a while but never taken the jump,
-								until now. I couldn’t recommend this course enough. I’m now in the job of
-								my dreams and so excited about the future."
-							</p>
-						</div>
-						<div class="slide-text__summary">
-							<h3>Tanya Sinclair</h3>
-							<div class="slide-text__summary--title">
-								<h3>UX Engineer</h3>
+				<!-- Slide -->
+				<div class="slide">
+					<!-- Text -->
+					<div class="slide__text-container">
+						<div class="user">
+							<div class="user__quote">
+								<p>
+									"I’ve been interested in coding for a while but never taken the jump,
+									until now. I couldn’t recommend this course enough. I’m now in the job
+									of my dreams and so excited about the future."
+								</p>
+							</div>
+							<div class="user__info">
+								<div class="user__info--name">
+									<h3>Tanya Sinclair</h3>
+								</div>
+								<div class="user__info--title">
+									<h3>UX Engineer</h3>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="slide-image__container">
-					<img
-						class="slide-image__photo"
-						src="./images/image-tanya.jpg"
-						alt="customer-photo"
-					/>
-					<img
-						class="slide-image__background"
-						src="./images/pattern-bg.svg"
-						alt="background-pattern"
-					/>
-					<div class="slider__controls">
-						<button>
-							<img src="./images/icon-prev.svg" alt="previous-slide-button" />
-						</button>
-						<button>
-							<img src="./images/icon-next.svg" alt="previous-slide-button" />
-						</button>
+					<!-- Image -->
+					<div class="slide__image-container">
+						<div class="slide__image-background">
+							<img src="./images/pattern-bg.svg" alt="background pattern" />
+						</div>
+						<div class="user-photo">
+							<img src="./images/image-tanya.jpg" alt="customer-photo" />
+						</div>
 					</div>
+				</div>
+				<!-- Controls -->
+				<div class="slider__controls">
+					<button>
+						<img src="./images/icon-prev.svg" alt="previous-slide-button" />
+					</button>
+					<button>
+						<img src="./images/icon-next.svg" alt="previous-slide-button" />
+					</button>
 				</div>
 			</div>
 		</div>
