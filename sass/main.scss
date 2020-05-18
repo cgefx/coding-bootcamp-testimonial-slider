@@ -6,7 +6,6 @@
 body {
 	font-family: 'Inter', sans-serif;
 	color: $color-dark-blue;
-	height: 100vh;
 }
 
 .wrapper {
@@ -17,24 +16,58 @@ body {
 	border: 1px solid green;
 	max-width: 1440px;
 	height: 100vh;
-}
 
-.background-curve {
-	position: absolute;
-	bottom: 0;
-	left: 0;
+	@include respond(bp1100) {
+		justify-content: start;
+	}
+
+	&__background-curve {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
 }
 
 .slider {
 	border: 1px solid blue;
-	margin: 0 6rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0 6rem;
+	position: relative;
+	height: autos;
 
-	@include respond(bp900) {
+	@include respond(bp1100) {
+		flex-direction: column;
+		margin: 6rem;
+	}
+
+	&__controls {
+		display: flex;
+		justify-content: space-around;
+		height: auto;
+		width: 13rem;
+		position: absolute;
+		background: #fff;
+		box-shadow: 0 2rem 5rem hsla(240, 38%, 20%, 0.3);
+		bottom: 0;
+		right: 36%;
+		padding: 3rem 2rem;
+		border-radius: 5rem;
+		margin: 0 auto;
+
+		@include respond(bp1100) {
+			bottom: 53%;
+		}
+	}
+}
+
+.slide {
+	display: flex;
+	@include respond(bp1100) {
 		flex-direction: column-reverse;
-		margin: 1rem;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__text-container {
@@ -42,122 +75,77 @@ body {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
 		max-width: 63rem;
 		margin-left: 10rem;
 		margin-right: -10%;
 		z-index: 100;
 		padding: 0;
+
+		@include respond(bp1100) {
+			margin: 0 auto;
+		}
+	}
+
+	&__image-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid orange;
+		height: auto;
+		width: auto;
 		position: relative;
 
-		@include respond(bp900) {
-			margin: 8rem auto;
+		@include respond(bp1100) {
+			margin-bottom: 8rem;
 		}
 	}
 
-	&__text-background {
-		position: absolute;
-		top: -6rem;
-		left: 8rem;
-		height: auto;
-		width: 20%;
-
-		@include respond(bp900) {
-			left: 42%;
-			height: auto;
-		}
-
-		@include respond(bp900) {
-			top: -4rem;
-		}
-	}
-
-	&__controls {
-		display: flex;
-		justify-content: space-around;
-		position: absolute;
-		bottom: 5rem;
-		border-radius: 5rem;
-		width: 11rem;
-		height: 6rem;
-		bottom: 5%;
-		left: 20%;
-		background-color: #fff;
-		padding: 1rem;
-		z-index: 200;
-		box-shadow: 0 10px 20px hsla(240, 38%, 20%, 0.3);
-
-		@include respond(bp900) {
-			left: 3%;
-		}
-
-		img {
-			border-radius: 2.4rem;
-		}
+	&__image-background {
+		height: 100%;
+		width: 100%;
+		transform: scale(1.05);
 	}
 }
 
-.slide-text {
-	&__info {
+.user {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@include respond(bp1100) {
+		text-align: center;
+	}
+
+	&__quote {
 		font-size: 3.2rem;
 		font-weight: 300;
 		margin-bottom: 5rem;
-
-		@include respond(bp900) {
-			text-align: center;
-			margin-bottom: 3rem;
-		}
-
-		@include respond(bp600) {
-			font-size: 2rem;
-		}
 	}
 
-	&__summary {
+	&__info {
 		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		font-size: 1.8rem;
 		font-weight: 700;
-		margin: 0 auto;
+		font-size: 2rem;
 
-		@include respond(bp900) {
+		@include respond(bp1100) {
 			flex-direction: column;
-			justify-content: center;
 		}
 
 		&--title {
 			color: $color-gray-blue;
-			font-weight: 500;
 			margin-left: 1rem;
 		}
 	}
 }
 
-.slide-image {
-	&__container {
-		border: 1px solid green;
-		position: relative;
-		height: auto;
-		width: auto;
-	}
+.user-photo {
+	height: 80%;
+	width: 80%;
+	background-size: cover;
+	position: absolute;
+	box-shadow: 0 2rem 5rem hsla(240, 38%, 20%, 0.3);
 
-	&__background {
-		z-index: -1;
-	}
-
-	&__photo {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		box-shadow: 0 20px 50px hsla(240, 38%, 20%, 0.3);
-		height: 80%;
-		width: 80%;
-		min-width: 25rem;
-		min-height: 25rem;
+	img {
 		border-radius: 4px;
-		background-size: cover;
-		z-index: 1;
 	}
 }
