@@ -1,10 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 @import './abstracts/theme';
 @import './abstracts/media';
 @import './base/global';
 
 body {
-	font-family: 'Josefin Sans', sans-serif;
-	color: $color-dark;
+	font-family: 'Inter', sans-serif;
+	color: $color-dark-blue;
 	height: 100vh;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid green;
+	max-width: 1440px;
+	height: 100vh;
+}
+
+.background-curve {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.slider {
+	border: 1px solid blue;
+	margin: 0 6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include respond(bp900) {
+		flex-direction: column-reverse;
+		margin: 1rem;
+	}
+
+	&__text-container {
+		border: 1px solid red;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		max-width: 63rem;
+		margin-left: 10rem;
+		margin-right: -10%;
+		z-index: 100;
+		padding: 0;
+		position: relative;
+
+		@include respond(bp900) {
+			margin: 8rem auto;
+		}
+	}
+
+	&__text-background {
+		position: absolute;
+		top: -6rem;
+		left: 8rem;
+		height: auto;
+		width: 20%;
+
+		@include respond(bp900) {
+			left: 42%;
+			height: auto;
+		}
+
+		@include respond(bp900) {
+			top: -4rem;
+		}
+	}
+
+	&__controls {
+		display: flex;
+		justify-content: space-around;
+		position: absolute;
+		bottom: 5rem;
+		border-radius: 5rem;
+		width: 11rem;
+		height: 6rem;
+		bottom: 5%;
+		left: 20%;
+		background-color: #fff;
+		padding: 1rem;
+		z-index: 200;
+		box-shadow: 0 10px 20px hsla(240, 38%, 20%, 0.3);
+
+		@include respond(bp900) {
+			left: 3%;
+		}
+
+		img {
+			border-radius: 2.4rem;
+		}
+	}
+}
+
+.slide-text {
+	&__info {
+		font-size: 3.2rem;
+		font-weight: 300;
+		margin-bottom: 5rem;
+
+		@include respond(bp900) {
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		@include respond(bp600) {
+			font-size: 2rem;
+		}
+	}
+
+	&__summary {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		font-size: 1.8rem;
+		font-weight: 700;
+		margin: 0 auto;
+
+		@include respond(bp900) {
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		&--title {
+			color: $color-gray-blue;
+			font-weight: 500;
+			margin-left: 1rem;
+		}
+	}
+}
+
+.slide-image {
+	&__container {
+		border: 1px solid green;
+		position: relative;
+		height: auto;
+		width: auto;
+	}
+
+	&__background {
+		z-index: -1;
+	}
+
+	&__photo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		box-shadow: 0 20px 50px hsla(240, 38%, 20%, 0.3);
+		height: 80%;
+		width: 80%;
+		min-width: 25rem;
+		min-height: 25rem;
+		border-radius: 4px;
+		background-size: cover;
+		z-index: 1;
+	}
 }

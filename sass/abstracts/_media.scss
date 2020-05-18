@@ -73,6 +73,13 @@ $breakpoint argument choices
 		}
 	}
 
+	@if $breakpoint == bp900 {
+		@media only screen and (max-width: 56.25em) {
+			//900px divide by 16px base font size
+			@content;
+		}
+	}
+
 	@if $breakpoint == bp1100 {
 		@media only screen and (max-width: 68.75em) {
 			//1100px
