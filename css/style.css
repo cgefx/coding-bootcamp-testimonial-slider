@@ -45,12 +45,6 @@ body {
 
 html {
   font-size: 62.5%; }
-  @media only screen and (max-width: 64em) {
-    html {
-      font-size: 55%; } }
-  @media only screen and (max-width: 37.5em) {
-    html {
-      font-size: 40%; } }
 
 body {
   box-sizing: border-box; }
@@ -98,83 +92,118 @@ body {
   color: #202046; }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid green;
-  max-width: 1200px;
-  height: 100vh;
-  margin: 0 auto; }
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100vh; }
   .wrapper__background-curve {
     position: absolute;
     bottom: 0;
     left: 0; }
 
-.slider {
-  border: 1px solid blue;
+.slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 0 4.2rem;
-  margin: 0 auto; }
-
-.slide {
-  display: flex; }
+  margin: 0 6rem;
+  height: 100vh; }
   @media only screen and (max-width: 50em) {
     .slide {
       flex-direction: column-reverse;
-      justify-content: center;
-      align-items: center; } }
+      justify-content: flex-end;
+      align-items: center;
+      margin: 2.4rem;
+      height: auto; } }
   .slide__background-pattern {
     position: absolute;
     top: 2%;
     transform: scale(1.3);
-    z-index: -100; }
+    z-index: -100;
+    padding: 1rem; }
   .slide__text-container {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 63rem;
-    margin-right: -4%;
-    z-index: 100; }
-    @media only screen and (max-width: 64em) {
+    max-width: 64rem;
+    margin-right: -6%;
+    z-index: 100;
+    position: relative; }
+    @media only screen and (max-width: 50em) {
       .slide__text-container {
-        margin: 0 auto; } }
+        margin: 0; } }
   .slide__image-container {
-    border: 1px solid orange;
     position: relative;
-    border-radius: 4px;
+    border-radius: 8px;
     box-shadow: 0 2rem 5rem rgba(32, 32, 70, 0.3); }
     @media only screen and (max-width: 64em) {
       .slide__image-container {
-        margin-bottom: 8rem; } }
+        margin-bottom: 8.6rem;
+        margin-top: 2.4rem;
+        width: 80%; } }
+  .slide__customer-image {
+    border-radius: 8px; }
   .slide__controls {
-    display: flex;
-    justify-content: space-around;
     position: absolute;
-    left: 10%;
-    bottom: -5%;
-    height: 6rem;
+    display: flex;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: space-around;
+    height: 5.5rem;
     width: 11rem;
     background: #fff;
     border-radius: 5rem;
     box-shadow: 0 2rem 5rem rgba(32, 32, 70, 0.3); }
+    @media only screen and (max-width: 50em) {
+      .slide__controls {
+        left: 50%;
+        height: 4rem;
+        width: 8rem; } }
+
+.user__quote-icon {
+  position: absolute;
+  max-width: 12rem;
+  margin: 0 auto;
+  bottom: 100%;
+  left: 25%;
+  transform: translate(-50%, 35%) scale(1); }
+  @media only screen and (max-width: 50em) {
+    .user__quote-icon {
+      transform: translate(-50%, 35%) scale(0.5);
+      left: 50%;
+      bottom: 95%; } }
 
 .user__quote {
   font-size: 3.2rem;
   font-weight: 300;
   margin-bottom: 5rem; }
+  @media only screen and (max-width: 64em) {
+    .user__quote {
+      font-size: 2.4rem;
+      margin-bottom: 1.6rem; } }
+  @media only screen and (max-width: 50em) {
+    .user__quote {
+      text-align: center;
+      font-size: 1.8rem; } }
 
 .user__info {
   display: flex;
   font-weight: 700;
-  font-size: 2rem; }
+  font-size: 1.8rem; }
   @media only screen and (max-width: 64em) {
     .user__info {
       flex-direction: column; } }
+  @media only screen and (max-width: 50em) {
+    .user__info {
+      align-items: center;
+      font-size: 1.4rem; } }
   .user__info--title {
     color: #babacf;
-    margin-left: 1rem; }
+    margin-left: 1rem;
+    font-weight: 300; }
+    @media only screen and (max-width: 64em) {
+      .user__info--title {
+        margin: 0.5rem 0; } }
+
+.display-none {
+  display: none; }
