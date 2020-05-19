@@ -45,7 +45,7 @@ body {
 
 html {
   font-size: 62.5%; }
-  @media only screen and (max-width: 68.75em) {
+  @media only screen and (max-width: 64em) {
     html {
       font-size: 55%; } }
   @media only screen and (max-width: 37.5em) {
@@ -67,7 +67,6 @@ p {
   line-height: 1.5; }
 
 img {
-  width: 100%;
   max-width: 100%;
   vertical-align: middle; }
 
@@ -104,11 +103,9 @@ body {
   justify-content: center;
   align-items: center;
   border: 1px solid green;
-  max-width: 1440px;
-  height: 100vh; }
-  @media only screen and (max-width: 68.75em) {
-    .wrapper {
-      justify-content: start; } }
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto; }
   .wrapper__background-curve {
     position: absolute;
     bottom: 0;
@@ -119,93 +116,65 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 6rem;
-  position: relative;
-  height: autos; }
-  @media only screen and (max-width: 68.75em) {
-    .slider {
-      flex-direction: column;
-      margin: 6rem; } }
-  .slider__controls {
-    display: flex;
-    justify-content: space-around;
-    height: auto;
-    width: 13rem;
-    position: absolute;
-    background: #fff;
-    box-shadow: 0 2rem 5rem rgba(32, 32, 70, 0.3);
-    bottom: 0;
-    right: 36%;
-    padding: 3rem 2rem;
-    border-radius: 5rem;
-    margin: 0 auto; }
-    @media only screen and (max-width: 68.75em) {
-      .slider__controls {
-        bottom: 53%; } }
+  height: 100vh;
+  padding: 0 4.2rem;
+  margin: 0 auto; }
 
 .slide {
   display: flex; }
-  @media only screen and (max-width: 68.75em) {
+  @media only screen and (max-width: 50em) {
     .slide {
       flex-direction: column-reverse;
       justify-content: center;
       align-items: center; } }
+  .slide__background-pattern {
+    position: absolute;
+    top: 2%;
+    transform: scale(1.3);
+    z-index: -100; }
   .slide__text-container {
     border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 63rem;
-    margin-left: 10rem;
-    margin-right: -10%;
-    z-index: 100;
-    padding: 0; }
-    @media only screen and (max-width: 68.75em) {
+    margin-right: -4%;
+    z-index: 100; }
+    @media only screen and (max-width: 64em) {
       .slide__text-container {
         margin: 0 auto; } }
   .slide__image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: 1px solid orange;
-    height: auto;
-    width: auto;
-    position: relative; }
-    @media only screen and (max-width: 68.75em) {
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 2rem 5rem rgba(32, 32, 70, 0.3); }
+    @media only screen and (max-width: 64em) {
       .slide__image-container {
         margin-bottom: 8rem; } }
-  .slide__image-background {
-    height: 100%;
-    width: 100%;
-    transform: scale(1.05); }
-
-.user {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
-  @media only screen and (max-width: 68.75em) {
-    .user {
-      text-align: center; } }
-  .user__quote {
-    font-size: 3.2rem;
-    font-weight: 300;
-    margin-bottom: 5rem; }
-  .user__info {
+  .slide__controls {
     display: flex;
-    font-weight: 700;
-    font-size: 2rem; }
-    @media only screen and (max-width: 68.75em) {
-      .user__info {
-        flex-direction: column; } }
-    .user__info--title {
-      color: #babacf;
-      margin-left: 1rem; }
+    justify-content: space-around;
+    position: absolute;
+    left: 10%;
+    bottom: -5%;
+    height: 6rem;
+    width: 11rem;
+    background: #fff;
+    border-radius: 5rem;
+    box-shadow: 0 2rem 5rem rgba(32, 32, 70, 0.3); }
 
-.user-photo {
-  height: 80%;
-  width: 80%;
-  background-size: cover;
-  position: absolute;
-  box-shadow: 0 2rem 5rem rgba(32, 32, 70, 0.3); }
-  .user-photo img {
-    border-radius: 4px; }
+.user__quote {
+  font-size: 3.2rem;
+  font-weight: 300;
+  margin-bottom: 5rem; }
+
+.user__info {
+  display: flex;
+  font-weight: 700;
+  font-size: 2rem; }
+  @media only screen and (max-width: 64em) {
+    .user__info {
+      flex-direction: column; } }
+  .user__info--title {
+    color: #babacf;
+    margin-left: 1rem; }

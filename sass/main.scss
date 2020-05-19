@@ -14,12 +14,9 @@ body {
 	justify-content: center;
 	align-items: center;
 	border: 1px solid green;
-	max-width: 1440px;
+	max-width: 1200px;
 	height: 100vh;
-
-	@include respond(bp1100) {
-		justify-content: start;
-	}
+	margin: 0 auto;
 
 	&__background-curve {
 		position: absolute;
@@ -33,41 +30,24 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 6rem;
-	position: relative;
-	height: autos;
-
-	@include respond(bp1100) {
-		flex-direction: column;
-		margin: 6rem;
-	}
-
-	&__controls {
-		display: flex;
-		justify-content: space-around;
-		height: auto;
-		width: 13rem;
-		position: absolute;
-		background: #fff;
-		box-shadow: 0 2rem 5rem hsla(240, 38%, 20%, 0.3);
-		bottom: 0;
-		right: 36%;
-		padding: 3rem 2rem;
-		border-radius: 5rem;
-		margin: 0 auto;
-
-		@include respond(bp1100) {
-			bottom: 53%;
-		}
-	}
+	height: 100vh;
+	padding: 0 4.2rem;
+	margin: 0 auto;
 }
 
 .slide {
 	display: flex;
-	@include respond(bp1100) {
+	@include respond(bp800) {
 		flex-direction: column-reverse;
 		justify-content: center;
 		align-items: center;
+	}
+
+	&__background-pattern {
+		position: absolute;
+		top: 2%;
+		transform: scale(1.3);
+		z-index: -100;
 	}
 
 	&__text-container {
@@ -76,42 +56,41 @@ body {
 		flex-direction: column;
 		justify-content: center;
 		max-width: 63rem;
-		margin-left: 10rem;
-		margin-right: -10%;
+		margin-right: -4%;
 		z-index: 100;
-		padding: 0;
 
-		@include respond(bp1100) {
+		@include respond(bp1024) {
 			margin: 0 auto;
 		}
 	}
 
 	&__image-container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		border: 1px solid orange;
-		height: auto;
-		width: auto;
 		position: relative;
+		border-radius: 4px;
 
-		@include respond(bp1100) {
+		box-shadow: 0 2rem 5rem hsla(240, 38%, 20%, 0.3);
+
+		@include respond(bp1024) {
 			margin-bottom: 8rem;
 		}
 	}
 
-	&__image-background {
-		height: 100%;
-		width: 100%;
-		transform: scale(1.05);
+	&__controls {
+		display: flex;
+		justify-content: space-around;
+		position: absolute;
+		left: 10%;
+		bottom: -5%;
+		height: 6rem;
+		width: 11rem;
+		background: #fff;
+		border-radius: 5rem;
+		box-shadow: 0 2rem 5rem hsla(240, 38%, 20%, 0.3);
 	}
 }
 
 .user {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
 	@include respond(bp1100) {
 		text-align: center;
 	}
@@ -127,7 +106,7 @@ body {
 		font-weight: 700;
 		font-size: 2rem;
 
-		@include respond(bp1100) {
+		@include respond(bp1024) {
 			flex-direction: column;
 		}
 
@@ -135,17 +114,5 @@ body {
 			color: $color-gray-blue;
 			margin-left: 1rem;
 		}
-	}
-}
-
-.user-photo {
-	height: 80%;
-	width: 80%;
-	background-size: cover;
-	position: absolute;
-	box-shadow: 0 2rem 5rem hsla(240, 38%, 20%, 0.3);
-
-	img {
-		border-radius: 4px;
 	}
 }
